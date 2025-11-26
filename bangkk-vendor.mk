@@ -2,6 +2,7 @@
 # Automatically generated file. DO NOT MODIFY
 #
 
+
 PRODUCT_SOONG_NAMESPACES += \
     vendor/motorola/bangkk
 
@@ -3478,6 +3479,8 @@ PRODUCT_PACKAGES += \
     libcom.qti.chinodeutils \
     libets_teeclient_v3 \
     libjpege \
+    libancbase_fd \
+    libAncFaceDetect \
     liblowlight_ai_portrait.arcsoft \
     libmctfengine_stub \
     libmmcamera_bestats \
@@ -3514,3 +3517,4 @@ PRODUCT_PACKAGES += \
     capsense_reset \
     android.hardware.biometrics.fingerprint@2.1-service-ets \
     motorola.hardware.camera.desktop@2.0-service
+
