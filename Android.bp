@@ -4907,6 +4907,31 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "liblowlight_ai_portrait.arcsoft",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/liblowlight_ai_portrait.arcsoft.so",
+            ],
+            shared_libs: [
+                "libcdsprpc",
+                "liblog",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libmctfengine_stub",
     owner: "motorola",
     strip: {
