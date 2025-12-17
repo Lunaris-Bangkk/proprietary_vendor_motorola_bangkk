@@ -3953,6 +3953,31 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libAncFaceDetect",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libAncFaceDetect.so",
+            ],
+            shared_libs: [
+                "libancbase_fd",
+                "libc",
+                "libm",
+                "libdl",
+                "liblog",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libBSTSWAD",
     owner: "motorola",
     strip: {
@@ -4002,6 +4027,30 @@ cc_prebuilt_library_shared {
                 "libm",
                 "libdl",
                 "libc++",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libancbase_fd",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libancbase_fd.so",
+            ],
+            shared_libs: [
+                "libm",
+                "liblog",
+                "libdl",
+                "libc",
             ],
         },
     },
@@ -4926,48 +4975,6 @@ cc_prebuilt_library_shared {
             ],
         },
     },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libancbase_fd",
-    owner: "motorola",
-    strip: { none: true },
-
-    target: {
-        android_arm64: {
-            srcs: ["proprietary/vendor/lib64/libancbase_fd.so"],
-            shared_libs: [
-                "liblog",
-            ],
-        },
-    },
-
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libAncFaceDetect",
-    owner: "motorola",
-    strip: { none: true },
-
-    target: {
-        android_arm64: {
-            srcs: ["proprietary/vendor/lib64/libAncFaceDetect.so"],
-            shared_libs: [
-		"libancbase_fd",
-                "liblog",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-
     compile_multilib: "64",
     prefer: true,
     soc_specific: true,
@@ -5943,10 +5950,33 @@ cc_prebuilt_library_shared {
 }
 
 android_app_import {
+    name: "MotoSignatureApp",
+    owner: "motorola",
+    apk: "proprietary/system/app/MotoSignatureApp/MotoSignatureApp.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+}
+
+android_app_import {
     name: "EuiccPartnerApp",
     owner: "motorola",
     apk: "proprietary/product/app/EuiccPartnerApp/EuiccPartnerApp.apk",
     certificate: "platform",
+    dex_preopt: {
+        enabled: false,
+    },
+    product_specific: true,
+}
+
+android_app_import {
+    name: "MotCamera3AI",
+    owner: "motorola",
+    apk: "proprietary/product/app/MotCamera3AI/MotCamera3AI.apk",
+    preprocessed: true,
+    presigned: true,
     dex_preopt: {
         enabled: false,
     },
@@ -5987,6 +6017,55 @@ android_app_import {
     },
     privileged: true,
     product_specific: true,
+}
+
+android_app_import {
+    name: "MotCamera4",
+    owner: "motorola",
+    apk: "proprietary/product/priv-app/MotCamera4/MotCamera4.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+    product_specific: true,
+}
+
+android_app_import {
+    name: "MotorolaSettingsProvider",
+    owner: "motorola",
+    apk: "proprietary/system_ext/priv-app/MotorolaSettingsProvider/MotorolaSettingsProvider.apk",
+    certificate: "platform",
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+    system_ext_specific: true,
+}
+
+dex_import {
+    name: "com.motorola.motosignature",
+    owner: "motorola",
+    jars: [
+        "proprietary/system/framework/com.motorola.motosignature.jar",
+    ],
+}
+
+dex_import {
+    name: "moto-core_services",
+    owner: "motorola",
+    jars: [
+        "proprietary/system/framework/moto-core_services.jar",
+    ],
+}
+
+dex_import {
+    name: "moto-settings",
+    owner: "motorola",
+    jars: [
+        "proprietary/system/framework/moto-settings.jar",
+    ],
 }
 
 dex_import {
@@ -6101,4 +6180,12 @@ cc_prebuilt_binary {
     prefer: true,
     relative_install_path: "hw",
     soc_specific: true,
+}
+
+sh_binary {
+    name: "motsettings",
+    owner: "motorola",
+    src: "proprietary/system_ext/bin/motsettings",
+    filename: "motsettings",
+    system_ext_specific: true,
 }
