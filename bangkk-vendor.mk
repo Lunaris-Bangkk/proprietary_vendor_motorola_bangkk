@@ -3346,6 +3346,7 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/bangkk/proprietary/vendor/firmware/focaltech_ts_fw_csot.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/focaltech_ts_fw_csot.bin \
     vendor/motorola/bangkk/proprietary/vendor/firmware/goodix-tm-gt9916S-23062705-649a9b6c-bangkk.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/goodix-tm-gt9916S-23062705-649a9b6c-bangkk.bin \
     vendor/motorola/bangkk/proprietary/vendor/firmware/mot_aw86006.prog:$(TARGET_COPY_OUT_VENDOR)/firmware/mot_aw86006.prog \
+    vendor/motorola/bangkk/proprietary/vendor/firmware/mot_dw9784.prog:$(TARGET_COPY_OUT_VENDOR)/firmware/mot_dw9784.prog \
     vendor/motorola/bangkk/proprietary/vendor/firmware/sec_s3nrn4v_firmware.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/sec_s3nrn4v_firmware.bin \
     vendor/motorola/bangkk/proprietary/vendor/firmware/tm_goodix_cfg_group.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/tm_goodix_cfg_group.bin \
     vendor/motorola/bangkk/proprietary/vendor/lib64/camera/com.qti.sensormodule.mot_bangkk_ov16a1q_ofilm.bin:$(TARGET_COPY_OUT_VENDOR)/lib64/camera/com.qti.sensormodule.mot_bangkk_ov16a1q_ofilm.bin \
