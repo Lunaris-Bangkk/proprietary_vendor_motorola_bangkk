@@ -23,5 +23,8 @@ git clone -b fifteen https://github.com/Dubai-Resources/hardware_motorola hardwa
 rm -rf vendor/infinity-priv/keys
 git clone https://github.com/ARYANGODxDOfficial/private_keys vendor/infinity-priv/keys
 
+rm -rf packages/apps/ViPER4AndroidFX
+git clone https://github.com/TogoFire/packages_apps_ViPER4AndroidFX.git packages/apps/ViPER4AndroidFX
+
 rm -rf kernel/motorola/sm6375
 git clone -b seventeen https://github.com/ARYANGODxDOfficial/android_kernel_motorola_sm6375 kernel/motorola/sm6375
